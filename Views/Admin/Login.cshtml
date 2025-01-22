@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Admin Girişi";
+}
+
+<h1>Yönetici Girişi</h1>
+
+@if (ViewData["Error"] != null)
+{
+    <div style="color: red; margin-bottom: 20px;">
+        @ViewData["Error"]
+    </div>
+}
+
+<form asp-action="Login" method="post">
+    <div>
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
+    </div>
+    <div>
+        <label for="password">Şifre</label>
+        <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+    </div>
+    <button type="submit">Giriş Yap</button>
+</form>
